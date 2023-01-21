@@ -1,0 +1,12 @@
+{
+  "name": "note-taker-pd-unb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["note taker", "express", "heroku"],
+  "author": "Paul Dimension",
+  "license": "ISC"
+}
