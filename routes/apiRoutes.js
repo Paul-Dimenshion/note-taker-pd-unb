@@ -1,18 +1,19 @@
 // dependencies
-import express from "express";
+import express from 'express';
 const router = express.Router();
+// const db = require('../db/db.json');
 
-// brings in the DB class object
-import DB from '../db/DB';
+// // brings in the DB class object
+import '../db/db.json' assert { type: "json" };
 
 // route to get notes
-router.get("/api/notes", async function (req, res) {
+router.get('/api/notes', async function (req, res) {
   const notes = await DB.readNotes();
   return res.json(notes);
 });
 
 // route to add a new note and add it to the json file
-router.post("/api/notes", async function (req, res) {
+router.post('/api/notes', async function (req, res) {
   const currentNotes = await DB.readNotes();
   let newNote = {
     title: req.body.title,
@@ -25,7 +26,7 @@ router.post("/api/notes", async function (req, res) {
 });
 
 // // route to delete notes
-router.delete("/api/notes/:id", async function (req, res) {
+router.delete('/api/notes/:id', async function (req, res) {
   // separates out the note to delete based on id
   const noteToDelete = req.params.id;
   // notes already in json file
@@ -38,3 +39,5 @@ router.delete("/api/notes/:id", async function (req, res) {
   
   return res.send(newNoteData);
 });
+
+export {router};
