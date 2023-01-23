@@ -1,8 +1,10 @@
-import express from 'express';
+import express from 'express'; //import dependencies
+const app = express(); //create app
 
-const app = express();
+const PORT = process.env.PORT || 3000; //create a PORT variable
 
-app.listen(3000, () => {
-    console.log('Server has been started on port 3000')
-});
+//create server listener
+app.listen(PORT, () => {
+    console.log(`Server has been started on port ${PORT}...`)
+})
 
