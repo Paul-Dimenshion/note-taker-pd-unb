@@ -1,10 +1,10 @@
 // dependencies
-import express from 'express';
+const express = require("express");
 const router = express.Router();
 // const db = require('../db/db.json');
 
 // // brings in the DB class object
-import '../db/db.json' assert { type: "json" };
+const DB = require("../db/DB");
 
 // route to get notes
 router.get('/api/notes', async function (req, res) {
@@ -20,7 +20,7 @@ router.post('/api/notes', async function (req, res) {
     text: req.body.text,
   };
 
-  await DB.addNote([...currentNotes, newNote]);
+  await DB.addNote({...currentNotes, newNote});
 
   return res.send(newNote);
 });
@@ -40,4 +40,4 @@ router.delete('/api/notes/:id', async function (req, res) {
   return res.send(newNoteData);
 });
 
-export {router};
+module.exports = router;

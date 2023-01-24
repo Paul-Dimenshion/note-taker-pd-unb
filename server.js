@@ -1,6 +1,6 @@
-import express from 'express'; //import dependencies
-import {router as apiRoutes} from './routes/apiRoutes.js';
-import {router as htmlRoutes} from './routes/htmlRoutes.js';
+const express = require("express"); //import dependencies
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require('./routes/htmlRoutes.js');
 
 const app = express(); //create app
 
