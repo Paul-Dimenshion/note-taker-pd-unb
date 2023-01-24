@@ -25,7 +25,7 @@ router.post('/api/notes', async function (req, res) {
   return res.send(newNote);
 });
 
-// // route to delete notes
+// route to delete notes
 router.delete('/api/notes/:id', async function (req, res) {
   // separates out the note to delete based on id
   const noteToDelete = req.params.id;
