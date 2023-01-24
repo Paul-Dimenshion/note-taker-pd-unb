@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 // const db = require('../db/db.json');
 
-// // brings in the DB class object
+// brings in the DB class object
 const DB = require("../db/DB");
 
 // route to get notes
